@@ -16,6 +16,9 @@ RUN php -r "copy('https://raw.githubusercontent.com/composer/getcomposer.org/mas
 
 RUN (pecl install xdebug || pecl install xdebug-2.5.5) && docker-php-ext-enable xdebug
 
+# Install php-zip
+RUN apt-get install zlib1g-dev && docker-php-ext-install zip
+
 EOF
 )
 
